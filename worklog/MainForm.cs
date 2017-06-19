@@ -7,12 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
+using System.IO;
 using Microsoft.Win32;
 
 namespace worklog
 {
     public partial class MainForm : Form
     {
+        private string logFileName = "worklog.txt";
         public MainForm()
         {
             InitializeComponent();
@@ -46,6 +48,25 @@ namespace worklog
                 case "tsmi_exit":
                     this.Close();
                     this.Dispose();
+                    break;
+                case "tsmi_log":
+                    string startPath = System.Environment.CurrentDirectory;
+                    string logPath = startPath + "\\"+ logFileName;
+                    if (File.Exists(logPath))
+                    {
+                        System.Diagnostics.Process.Start(logPath);
+                    }
+                    else
+                    {
+                        if (MessageBox.Show("工作日志文件未找到,是否重新创建？", "提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
+                        {
+                            StreamWriter sw;
+                            //不存在就新建一个文本文件,并写入一些内容
+                            sw = File.CreateText(logFileName);
+                            sw.WriteLine("****工作日志****");
+                            sw.Close();
+                        }
+                    }
                     break;
             }
         }

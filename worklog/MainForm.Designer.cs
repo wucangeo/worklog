@@ -38,6 +38,7 @@
             this.tsmi_auto = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmi_exit = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmi_log = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,12 +56,13 @@
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmi_show,
             this.tsmi_hide,
+            this.tsmi_log,
             this.toolStripSeparator2,
             this.tsmi_auto,
             this.toolStripSeparator1,
             this.tsmi_exit});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(125, 104);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 148);
             this.contextMenuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.contextMenuStrip1_ItemClicked);
             // 
             // tsmi_show
@@ -99,6 +101,12 @@
             this.tsmi_exit.Size = new System.Drawing.Size(152, 22);
             this.tsmi_exit.Text = "退出";
             // 
+            // tsmi_log
+            // 
+            this.tsmi_log.Name = "tsmi_log";
+            this.tsmi_log.Size = new System.Drawing.Size(152, 22);
+            this.tsmi_log.Text = "打开工作日志";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -125,6 +133,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem tsmi_auto;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem tsmi_log;
     }
 }
 
